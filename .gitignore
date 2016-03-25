@@ -1,3 +1,11 @@
+/local.properties
+/Android-ProgressCircle.iml
+/sample/sample.iml
+/library/library.iml
+/library/build
+/build
+/.idea
+/.gradle
 # Built application files
 *.apk
 *.ap_
@@ -30,3 +38,6 @@ proguard/
 
 # Android Studio captures folder
 captures/
+/*.iml
+/library/*.iml
+/sample/*.iml

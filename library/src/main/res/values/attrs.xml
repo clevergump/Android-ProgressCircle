@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ProgressCircle">
+        <!-- 如果圆的边框是有宽度(厚度)的, 那么 circleRadius特指该圆的外边框的半径, 实际在绘制该圆时,
+            绘制所用的半径是该 circleRadius减去圆边框厚度的 1/2后的值 -->
+        <attr name="circleOuterRadius" format="dimension"/>
+        <!-- 圆边框的宽度(厚度) -->
+        <attr name="circleBorderWidth" format="dimension" />
+        <!-- 圆边框的颜色 -->
+        <attr name="circleBorderColor" format="color"/>
+        <!-- 圆内扇形的颜色 -->
+        <attr name="innerPieColor" format="color" />
+        <!-- 绘制圆内扇形的起始角度 -->
+        <attr name="innerPieStartingAngle" format="float"/>
+        <!-- 绘制圆内扇形的最大进度 -->
+        <attr name="innerPieMaxProgress" format="integer"/>
+        <!-- 绘制圆内扇形的进度 -->
+        <attr name="innerPieProgress" format="integer"/>
+    </declare-styleable>
+
+</resources>

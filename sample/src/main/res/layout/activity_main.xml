@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sample.MainActivity">
+
+    <Button
+        android:id="@+id/btn_start_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startLoadingImages"
+        android:text="Start Loading"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/btn_start_loading"
+        android:layout_alignBottom="@id/btn_start_loading"
+        android:onClick="clearCache"
+        android:text="Clear Cache"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_start_loading"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+        <!-- scaleType不能设置为fitXY, 否则图片本身会有不按比例的拉伸 -->
+
+        <com.clevergump.progresscircle.library.ProgressCircle
+            android:id="@+id/progress_circle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>
