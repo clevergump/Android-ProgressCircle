@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         initData();
     }
 
+    private void initView() {
+        mIv = (ImageView) findViewById(R.id.iv);
+        mCircle = (ProgressCircle) findViewById(R.id.progress_circle);
+    }
+
     private void initData() {
         mDisplayImageOptions = new DisplayImageOptions.Builder()
                 .showImageOnLoading(R.mipmap.ic_loading)
@@ -47,15 +52,20 @@ public class MainActivity extends AppCompatActivity {
         mProgressListener = new ImageLoadingProgressListenerImpl(MainActivity.this);
     }
 
-    private void initView() {
-        mIv = (ImageView) findViewById(R.id.iv);
-        mCircle = (ProgressCircle) findViewById(R.id.progress_circle);
-    }
-
+    /**
+     * 开始加载图片.
+     * 当"START LOADING"按钮按下时会调用该方法
+     * @param view
+     */
     public void startLoadingImages(View view) {
         ImageLoader.getInstance().displayImage(IMAGE_URI, mIv, mDisplayImageOptions, mLoadingListener, mProgressListener);
     }
 
+    /**
+     * 清除图片在内存和硬盘上的缓存.
+     * 当"CLEAR CACHE"按钮按下时会调用该方法
+     * @param view
+     */
     public void clearCache(View view) {
         ImageLoader.getInstance().clearMemoryCache();
         ImageLoader.getInstance().clearDiskCache();

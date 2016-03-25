@@ -36,6 +36,7 @@ public class MyApplication extends Application {
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator())
                 // 线程池按照LIFO的顺序进行图片的加载, 即: 越是后加入到线程池队列中的图片, 越是优先进行加载.
                 .tasksProcessingOrder(QueueProcessingType.LIFO)
+                // 设置线程池最大并发数为5
                 .threadPoolSize(5)
                 // 打开调试日志的开关
                 .writeDebugLogs()
