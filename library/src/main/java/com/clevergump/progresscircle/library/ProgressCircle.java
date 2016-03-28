@@ -398,10 +398,10 @@ public class ProgressCircle extends View {
 
     /**
      * 判断当前线程是否是主线程
-     *
      * @return
+     * @link http://blog.csdn.net/clevergump/article/details/50995612
      */
     private boolean isMainThread() {
-        return Looper.getMainLooper().getThread().getId() == Thread.currentThread().getId();
+        return Looper.getMainLooper() == Looper.myLooper();
     }
 }
